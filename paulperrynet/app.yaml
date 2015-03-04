@@ -1,0 +1,24 @@
+application: paulperrynet
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: (.*)/
+  static_files: static\1/index.htm
+  upload: static/index.htm
+- url: /
+  static_dir: static
+    
+skip_files: |
+   ^(.*/)?(
+   (app\.yaml)|
+   (app\.yml)|
+   (index\.yaml)|
+   (index\.yml)|
+   (#.*#)|
+   (.*~)|
+   (.*\.py[co])|
+   (.*/RCS/.*)|
+   (\..*)|
+   )$
